@@ -28,17 +28,17 @@
     },
     {
       "type": "file",
-      "source": "/files/root/",
+      "source": "files/root/",
       "destination": "/root/"
     },
     {
       "type": "file",
-      "source": "/files/etc/",
+      "source": "files/etc/",
       "destination": "/etc/"
     },
     {
       "type": "file",
-      "source": "/files/var/",
+      "source": "files/var/",
       "destination": "/var/"
     },
     {
