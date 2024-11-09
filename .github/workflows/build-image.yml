@@ -20,3 +20,9 @@ jobs:
       - name: Run `packer init`
         id: init
         run: "packer init ./image.pkr.hcl"
+
+      - name: Run `packer init`
+        id: build
+        run: "packer build ./n8n.json"
+        env: 
+          DIGITALOCEAN_API_TOKEN: ${{ secrets.DIGITALOCEAN_API_TOKEN }}
