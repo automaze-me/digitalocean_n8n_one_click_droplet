@@ -1,0 +1,20 @@
+name: Create DigitalOcean 1-click image
+on:
+  - push
+
+jobs:
+  digitalocean:
+    name: DigitalOcean
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Build VM image with Packer
+        uses: santisaez/packer-action@v1
+        with:
+          only: digitalocean
+          template: n8n.json
+        env:
+          DIGITALOCEAN_API_TOKEN: ${{ secrets.DIGITALOCEAN_API_TOKEN }}

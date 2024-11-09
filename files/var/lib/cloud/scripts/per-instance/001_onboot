@@ -5,3 +5,11 @@ cat >> /root/.bashrc <<EOM
 chmod +x /root/n8n_setup.sh
 /root/n8n_setup.sh
 EOM
+
+# Remove the ssh force logout command
+sed -e '/Match User root/d' \
+    -e '/.*ForceCommand.*droplet.*/d' \
+    -i /etc/ssh/sshd_config
+
+systemctl restart ssh
+

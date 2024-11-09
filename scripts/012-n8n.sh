@@ -10,7 +10,4 @@ sed -i "s/<directory-path>/opt/g" ".env"
 docker volume create caddy_data
 docker volume create n8n_data
 
-ufw allow 80
-ufw allow 443
-
 
