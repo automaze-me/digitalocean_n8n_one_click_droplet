@@ -5,16 +5,18 @@ on:
 jobs:
   digitalocean:
     name: DigitalOcean
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Build VM image with Packer
-        uses: santisaez/packer-action@v1
+      - name: Setup `packer`
+        uses: hashicorp/setup-packer@main
+        id: setup
         with:
-          only: digitalocean
-          template: n8n.json
-        env:
-          DIGITALOCEAN_API_TOKEN: ${{ secrets.DIGITALOCEAN_API_TOKEN }}
+          version: ${{ env.PRODUCT_VERSION }}
+
+      - name: Run `packer init`
+        id: init
+        run: "packer init ./image.pkr.hcl"
