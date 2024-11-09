@@ -21,7 +21,7 @@ jobs:
         id: init
         run: "packer init ./image.pkr.hcl"
 
-      - name: Run `packer init`
+      - name: Run `packer build`
         id: build
         run: "packer build ./n8n.json"
         env: 
