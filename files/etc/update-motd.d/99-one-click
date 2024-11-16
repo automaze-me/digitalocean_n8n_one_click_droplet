@@ -3,22 +3,25 @@
 # Configured as part of the DigitalOcean 1-Click Image build process
 
 myip=$(hostname -I | awk '{print$1}')
-cat <<EOF
+cat <<'EOF'
 ********************************************************************************
-
+             ______
+     ____   /  __  \  ____
+    /    \  >      < /    \
+   |   |  \/   --   \   |  \
+   |___|  /\______  /___|  /
+        \/        \/     \/
 Welcome to the n8n 1-Click Droplet.
 
 * This 1-Click Droplet is NOT endorsed or maintained by n8n
-
 * You can SSH to this Droplet in a terminal as root: ssh root@$myip
-
 * Please follow the install script below to complete setup of the droplet.
-
 * For questions about n8n, go the the fantastic n8n community at 
   https://community.n8n.io/
 
-For questions about this 1-Click Droplet or when you need help
-creating automations visit https://automaze.me
+Questions about this 1-Click Droplet?
+Need help automating your business proceses? 
+Visit https://automaze.me
 
 ********************************************************************************
 
