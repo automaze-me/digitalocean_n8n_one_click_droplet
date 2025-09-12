@@ -28,7 +28,7 @@ do
     dom="$subdomain.$domain_name"
 
     # Get the IP of the entered domain
-    domain_ip=$(dig +short "$dom" | tail -n1)
+    domain_ip=$(dig +short "$dom" @8.8.8.8 | tail -n1)
     # Get the IP of the current machine
     current_ip=$(hostname -I | awk '{print $1}')
 
