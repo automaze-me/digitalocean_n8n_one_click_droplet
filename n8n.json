@@ -5,14 +5,14 @@
     "image_name": "n8n-snapshot-{{timestamp}}",
     "apt_packages": "",
     "application_name": "n8n",
-    "application_version": "1.66.0"
+    "application_version": "1.110.1"
   },
   "sensitive-variables": ["do_api_token"],
   "builders": [
     {
       "type": "digitalocean",
       "api_token": "{{user `do_api_token`}}",
-      "image": "ubuntu-22-04-x64",
+      "image": "ubuntu-25-04-x64",
       "region": "nyc3",
       "size": "s-1vcpu-1gb",
       "ssh_username": "root",
